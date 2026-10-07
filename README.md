@@ -64,7 +64,7 @@ firebase deploy --only firestore:rules,database
 Crie `.env` a partir de `.env.example`:
 
 ```env
-EXPO_PUBLIC_API_URL=https://sua-api-publica.exemplo.com
+EXPO_PUBLIC_API_URL=https://fiap-chat.onrender.com
 ```
 
 Instale as dependências:
@@ -94,7 +94,25 @@ npm start
 
 ## 3. API
 
-Na pasta `server`, crie `.env` com base em `server/.env.example`.
+A API está publicada no Render em:
+
+```text
+https://fiap-chat.onrender.com
+```
+
+Health check público:
+
+```text
+GET https://fiap-chat.onrender.com/health
+```
+
+Resposta esperada:
+
+```json
+{"ok":true,"service":"fiap-chat-api"}
+```
+
+Na pasta `server`, crie `.env` com base em `server/.env.example` para desenvolvimento local.
 
 Os valores administrativos devem existir **somente** nas variáveis secretas da hospedagem:
 
@@ -113,12 +131,6 @@ Para desenvolvimento local:
 cd server
 npm install
 npm run dev
-```
-
-Endpoint de disponibilidade:
-
-```text
-GET /health
 ```
 
 ### Endpoints autenticados
@@ -181,9 +193,9 @@ No Android, a API prioriza o token nativo FCM via Firebase Admin SDK. Nos demais
 
 ## 9. Pontos que dependem do ambiente de entrega
 
-- configurar uma URL pública real para a API;
+- API pública configurada e disponível em `https://fiap-chat.onrender.com`;
 - configurar o projeto EAS e o development build para validar notificações remotas;
-- fornecer credenciais administrativas do Firebase somente pelas variáveis secretas da hospedagem.
+- credenciais administrativas do Firebase configuradas somente nas variáveis secretas da hospedagem.
 
 ### Firebase configurado
 
@@ -203,7 +215,6 @@ Configuração cliente versionada em `cloudinaryConfig.json`:
 ```
 
 O preset deve permanecer com `Signing mode: Unsigned`, usando a pasta de assets `fiap-chat`. Não é necessário nem permitido colocar API Secret do Cloudinary no aplicativo.
-
 
 ## Testes no Expo Go
 
