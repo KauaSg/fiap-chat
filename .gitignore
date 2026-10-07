@@ -1,0 +1,17 @@
+node_modules/
+.expo/
+dist/
+web-build/
+.env
+.env.local
+*.log
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+serviceAccountKey.json
+firebaseAdminCredentials.json
+server/.env
+server/dist/
+.DS_Store

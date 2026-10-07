@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "FIAP Chat",
+    "slug": "fiap-chat",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "fiapchat",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "br.com.fiap.chat"
+    },
+    "android": {
+      "package": "br.com.fiap.chat"
+    },
+    "plugins": [
+      "expo-notifications",
+      "expo-image-picker"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "CONFIGURAR_COM_EAS"
+      }
+    }
+  }
+}
